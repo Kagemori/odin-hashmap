@@ -41,7 +41,8 @@ class LinkedList {
             node = node.nextNode;
         }
         index++;
-        console.log("Linked List Size: " + index);
+        // console.log("Linked List Size: " + index);
+        return index;
     }
 
     listHead(){
