@@ -20,9 +20,18 @@ test.set('lion', 'golden');
 // test.has('apple');
 // test.remove('apple');
 
-test.length();
+// test.length();
 
-test.remove('jacket');
+// test.remove('jacket');
+
+// console.log(test.map);
+// test.length();
+
+// test.clear();
+test.set('moon','silver');
 
 console.log(test.map);
 test.length();
+test.keys();
+test.values();
+test.entries();

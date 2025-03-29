@@ -236,6 +236,58 @@ class LinkedList {
             return;
         }
     }
+
+    getKeys(){
+        let node = this.head;
+        let nodeArr = [];
+        let i = 0;
+        while(node.nextNode){
+            nodeArr[i] = node.key;
+            node = node.nextNode;
+            i++;
+        }
+        i++;
+        nodeArr[i]= node.key;
+        // console.log(nodeArr);
+        return nodeArr;
+    }
+
+    getVals(){
+        let node = this.head;
+        let nodeArr = [];
+        let i = 0;
+        while(node.nextNode){
+            nodeArr[i] = node.value;
+            node = node.nextNode;
+            i++;
+        }
+        i++;
+        nodeArr[i]= node.value;
+        // console.log(nodeArr);
+        return nodeArr;
+    }
+
+    getEntries(){
+        let node = this.head;
+        let nodeArr = [];
+        let entry = []
+        let i = 0;
+        while(node.nextNode){
+            entry[0] = node.key;
+            entry[1] = node.value;
+            nodeArr[i] = entry;
+            node = node.nextNode;
+            i++;
+            entry = null;
+            entry = [];
+        }
+        i++;
+        entry[0] = node.key;
+        entry[1] = node.value;
+        nodeArr[i]= entry;
+        // console.log(nodeArr);
+        return nodeArr;
+    }
 }
 
 export {LinkedList}

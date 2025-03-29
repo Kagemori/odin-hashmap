@@ -12,6 +12,10 @@ class Node {
     setKey(key){
         this.key = key;
     }
+
+    getKey(){
+        return this.key;
+    }
 }
 
 export {Node}

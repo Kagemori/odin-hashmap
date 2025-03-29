@@ -34,7 +34,20 @@ class HashMap {
                 let linkedlist = this.map[hashedKey];
                 linkedlist.append(key, value);
             }
+
+            if(this.length() > (this.loadfactor*this.capacity)){
+                this.capacity = this.capacity * 2;
+                let entries = this.entries();
+                this.clear();
+                entries.forEach(element => {
+                    this.set(element[0],element[1]);
+                })
+            }
         }
+    }
+
+    expandMap(){
+
     }
 
     get(key){
@@ -87,7 +100,58 @@ class HashMap {
         return length;
     }
 
-    
+    clear(){
+        this.map = null;
+        this.map = [];
+    }
+
+    keys(){
+        let hashArr = this.map;
+        // console.log(hashArr);
+        let keys = [];
+        hashArr.forEach(element => {
+            if(element != undefined && element.head != null){
+                let keytemp = element.getKeys();
+                keytemp.forEach(element => {
+                    keys.push(element);
+                })
+            }
+        });
+        console.log(keys);
+        return keys;
+    }
+
+    values(){
+        let hashArr = this.map;
+        // console.log(hashArr);
+        let values = [];
+        hashArr.forEach(element => {
+            if(element != undefined && element.head != null){
+                let valtemp = element.getVals();
+                valtemp.forEach(element => {
+                    values.push(element);
+                })
+            }
+        });
+        console.log(values);
+        return values;
+    }
+
+    entries(){
+        let hashArr = this.map;
+        // console.log(hashArr);
+        let entries = [];
+        hashArr.forEach(element => {
+            if(element != undefined && element.head != null){
+                let entrytemp = element.getEntries();
+                entrytemp.forEach(element => {
+                    entries.push(element);
+                })
+            }
+        });
+        console.log(entries);
+        return entries;
+    }
 }
 
 export {HashMap}
